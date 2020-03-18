@@ -6,8 +6,9 @@ namespace RegistroOnlineBradesco
 
     class JsonBradesco
     {
-
+        [JsonIgnore]
         public int cdErro { get; set; }
+        [JsonIgnore]
         public string msgErro { get; set; }
 
         /// <summary>
