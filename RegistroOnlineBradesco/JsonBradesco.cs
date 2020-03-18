@@ -7,6 +7,9 @@ namespace RegistroOnlineBradesco
     public class JsonBradesco
     {
 
+        public int cdErro { get; set; }
+        public string msgErro { get; set; }
+
         /// <summary>
         /// Raiz CPF/CNPJ Beneficiário
         /// </summary>

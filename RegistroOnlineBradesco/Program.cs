@@ -25,7 +25,14 @@ namespace RegistroOnlineBradesco
                 ControleParticipante = "???",
                 PercentualJuros = 1m,
                 PercentualMulta = 123m,
-                
+                NomePagador = "Fulano de Tal",
+                LogradouroPagador = "Rua dos Bobos",
+                NumeroLogradouroPagador = "0",
+                CepPagador = "55555333",
+                BairroPagador = "The Shire",
+                MunicipioPagador = "The Shire",
+                UFPagador = "SC",
+                CPFCNPJPagador = "12345678901"
             });
         }
     }

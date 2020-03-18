@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Web;
 using System.Xml;
 
 namespace RegistroOnlineBradesco
@@ -36,7 +35,7 @@ namespace RegistroOnlineBradesco
         public void Enviar(Boleto boleto)
         {
             var validacao = Validador.Validate(boleto);
-            //if (!validacao.IsValid) throw new Exception(validacao.ToString());
+            if (!validacao.IsValid) throw new Exception(validacao.ToString());
 
             var dados = BradescoMapper.Mapper.Map<JsonBradesco>(boleto);
             var json = JsonConvert.SerializeObject(dados, Newtonsoft.Json.Formatting.Indented, JsonSettings);
@@ -66,17 +65,14 @@ namespace RegistroOnlineBradesco
             
             using (Stream strm = response.GetResponseStream())
             {
-                // var result = new StreamReader(strm).ReadToEnd();
-
-                // TODO: abrir xml, pegar result, verificar cdErro e msgErro
                 var doc = new XmlDocument();
                 doc.Load(strm);
 
-                var retorno = doc.GetElementsByTagName("return")?[0]?.InnerText;
+                var jsonRetorno = HttpUtility.HtmlDecode(doc.GetElementsByTagName("return")?[0]?.InnerText);
+                var objRetorno = JsonConvert.DeserializeObject<JsonBradesco>(jsonRetorno);
 
-
-               
-
+                if (objRetorno.cdErro != 0)
+                    throw new Exception($"O banco retornou a seguinte mensagem de erro: {objRetorno.msgErro} (Cód.:{objRetorno.cdErro})" );
             }
         }
     }
