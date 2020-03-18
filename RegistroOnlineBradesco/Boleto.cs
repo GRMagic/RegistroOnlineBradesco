@@ -34,7 +34,7 @@ namespace RegistroOnlineBradesco
         /// <summary>
         /// Data de Emissão do Título
         /// </summary>
-        public DateTime EmissaoTitulo { get; set; }
+        public DateTime EmissaoTitulo { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Data de Vencimento do Título (Formato: DD.MM.AAAA)

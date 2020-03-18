@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace RegistroOnlineBradesco
 {
-    public class JsonBradescoProvider : IValueProvider
+    class JsonBradescoProvider : IValueProvider
     {
         PropertyInfo _MemberInfo;
         public JsonBradescoProvider(PropertyInfo memberInfo) => _MemberInfo = memberInfo;

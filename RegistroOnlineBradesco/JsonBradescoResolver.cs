@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace RegistroOnlineBradesco
 {
-    public class JsonBradescoResolver : DefaultContractResolver
+    class JsonBradescoResolver : DefaultContractResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
         {

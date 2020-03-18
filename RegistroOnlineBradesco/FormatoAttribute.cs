@@ -2,7 +2,7 @@
 
 namespace RegistroOnlineBradesco
 {
-    public class FormatoAttribute : Attribute
+    class FormatoAttribute : Attribute
     {
         public TipoCampo Tipo { get; set; }
         public int Caracteres { get; set; }

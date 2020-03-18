@@ -4,7 +4,7 @@ using System;
 namespace RegistroOnlineBradesco
 {
 
-    public class JsonBradesco
+    class JsonBradesco
     {
 
         public int cdErro { get; set; }

@@ -2,7 +2,7 @@
 
 namespace RegistroOnlineBradesco
 {
-    public class BoletoValidacao : AbstractValidator<Boleto>
+    class BoletoValidacao : AbstractValidator<Boleto>
     {
         public BoletoValidacao()
         {

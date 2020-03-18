@@ -1,6 +1,6 @@
 ﻿namespace RegistroOnlineBradesco
 {
-    public enum TipoCampo
+    enum TipoCampo
     {
         Numerico,
         Alfanumerico
